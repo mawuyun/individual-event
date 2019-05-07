@@ -37,7 +37,7 @@
     },
     created() {
       var _this = this;
-      _this.$axios.get('/api/seller?id=' + this.seller.id).then((response) => {
+      _this.$axios.get(process.env.PATH + 'api/seller?id=' + this.seller.id).then((response) => {
         response = response.data;
         if (response.errno === ERR_OK) {
           _this.seller = Object.assign({}, _this.seller, response.data);

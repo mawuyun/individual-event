@@ -89,7 +89,7 @@
     },
     created() {
       var _this = this;
-      _this.$axios.get('/api/seller').then((response) => {
+      _this.$axios.get(process.env.PATH + 'api/seller').then((response) => {
         response = response.data;
         if (response.errno === ERR_OK) {
           _this.seller = response.data;

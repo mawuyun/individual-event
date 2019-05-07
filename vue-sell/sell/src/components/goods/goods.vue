@@ -89,7 +89,7 @@
     created() {
       var _this = this;
       _this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee'];
-      _this.$axios.get('/api/goods').then((response) => {
+      _this.$axios.get(process.env.PATH + 'api/goods').then((response) => {
         console.log(response);
         response = response.data;
         if (response.errno === ERR_OK) {
@@ -101,7 +101,7 @@
           });
         }
       });
-      _this.$axios.get('/api/seller').then((response) => {
+      _this.$axios.get(process.env.PATH + 'api/seller').then((response) => {
         console.log(response);
         response = response.data;
         console.log(response);
